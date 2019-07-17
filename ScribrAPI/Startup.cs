@@ -100,7 +100,7 @@ namespace ScribrAPI
             app.UseFileServer();
             app.UseSignalR(routes =>
             {
-                routes.MapHub<PushNotification>("/chat");
+                routes.MapHub<PushNotification>("/hub");
             });
         }
     }

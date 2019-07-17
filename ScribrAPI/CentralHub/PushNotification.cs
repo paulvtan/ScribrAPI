@@ -8,14 +8,19 @@ namespace ScribrAPI.CentralHub
 {
     public class PushNotification : Hub
     {
-        public void BroadcastMessage(string name, string message)
+        public async Task ConnectToHub()
         {
-            Clients.All.SendAsync("broadcastMessage", name, message);
+            await Clients.All.SendAsync("Connected");
         }
 
-        public void Echo(string name, string message)
+        public async Task AddVideo()
         {
-            Clients.Client(Context.ConnectionId).SendAsync("echo", name, message + " (echo from server)");
+            await Clients.All.SendAsync("VideoAdded");
+        }
+
+        public async Task DeleteVideo()
+        {
+            await Clients.All.SendAsync("VideoDeleted");
         }
     }
 }
