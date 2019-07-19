@@ -33,7 +33,7 @@ namespace ScribrAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<scriberContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ScribrDatabase")));
+            services.AddDbContext<scriberContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(
             options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
