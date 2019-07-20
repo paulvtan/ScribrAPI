@@ -32,8 +32,7 @@ namespace ScribrAPI
         {
             services.AddDbContext<scriberContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(
-            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<scriberContext>();
             services.AddAutoMapper(typeof(Startup));
 
